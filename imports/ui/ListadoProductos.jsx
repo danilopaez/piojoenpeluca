@@ -7,8 +7,10 @@ export default class ListadoProductos extends Component {
     return (
       <div>
         <h2>Cell Phone</h2>
-        <img src="/img/iphonex-TA.jpg" alt=""/>
-        <img src="/img/iphonex-X.jpg" alt=""/>
+        <div className="" id="PrimeraIMG"></div>
+        <div className="" id="SegundaIMG"></div>
+
+        
       </div>
     );
   }

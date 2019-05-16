@@ -1,4 +1,16 @@
 body {
-  padding: 10px;
+  
   font-family: sans-serif;
+}
+
+#PrimeraIMG{
+  background: url("/img/iphonex-TA.jpg");
+  width: 100vw;
+  height: 80vh;
+}
+
+#SegundaIMG{
+  background: url("/img/iphonex-X.jpg");
+  width: 100vw;
+  height: 80vh;
 }
