@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ItemProducto from './ItemProducto';
 import { withTracker } from 'meteor/react-meteor-data';
-import Productos from '../api/productos';
+import GroundProductos from '../api/ground-productos';
+
+foo = new Ground.Collection('test');
 
 
 class ListadoProductos extends Component {
@@ -24,6 +26,6 @@ class ListadoProductos extends Component {
 
 export default ListadoProductosContainer = withTracker(() => {
   return {
-    productos: Productos.find().fetch(),
+    productos: GroundProductos.find().fetch(),
   };
 })(ListadoProductos);
