@@ -3,6 +3,12 @@ import { Meteor } from 'meteor/meteor';
 import pedirMorfi from '../methods/pedir';
 
 export default class ItemProducto extends Component {
+    constructor(){
+        super();
+
+        
+    }
+
     pedir = ev => {
         ev.preventDefault();
         Meteor.call('pedirMorfi', {pedido:1}, e=>{
@@ -15,19 +21,21 @@ export default class ItemProducto extends Component {
 
 
     render() {
+        const p = this.props.prod
         return (
-                <div className="" id="PrimeraIMG">
-                    <button>mas</button>
-                    <h2>Pizzas</h2>
-                    <form action="">
-                        <input type="number"  />
-                        <button
-                        onClick={ this.pedir }
-                        >
-                            Hacé Comer Chinverguencha
-                        </button>
+                <div className="col m4 s12" >
+                    <div className="card">
+                        <div className="card-image">
+                            <img src={ p.url } />
+                        <span className="card-title">
+                            <i className="material-icons" onClick={this.pedir}>add_circle_outline</i>
+                            <i className="material-icons" onClick={this.pedir}>remove_circle_outline</i>
+                            { p.nombre }
+                            </span>
+                        </div> 
+                    </div>
+                    
 
-                    </form>
                 </div>
 
         );

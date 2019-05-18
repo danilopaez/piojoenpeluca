@@ -1,34 +1,31 @@
 import Pedir from '/imports/methods/pedir';
 import HookPedir from '/imports/hooks/pedir';
 
-// import { Meteor } from 'meteor/meteor';
-// import Links from '/imports/api/links';
+import { Meteor } from 'meteor/meteor';
+import Productos from '/imports/api/productos';
 
-// function insertLink(title, url) {
-//   Links.insert({ title, url, createdAt: new Date() });
-// }
+function insertarProducto(nombre, url) {
+    Productos.insert({ nombre, url, createdAt: new Date() });
+}
 
-// Meteor.startup(() => {
-//   // If the Links collection is empty, add some data.
-//   if (Links.find().count() === 0) {
-//     insertLink(
-//       'Do the Tutorial',
-//       'https://www.meteor.com/tutorials/react/creating-an-app'
-//     );
+Meteor.startup(() => {
 
-//     insertLink(
-//       'Follow the Guide',
-//       'http://guide.meteor.com'
-//     );
+    if (Productos.find().count() === 0) {
+        insertarProducto(
+            'Pizzas',
+            '/img/pizza.jpg'
+        );
 
-//     insertLink(
-//       'Read the Docs',
-//       'https://docs.meteor.com'
-//     );
+        insertarProducto(
+            'Lomos',
+            '/img/lomo.jpg'
+        );
 
-//     insertLink(
-//       'Discussions',
-//       'https://forums.meteor.com'
-//     );
-//   }
-// });
+        insertarProducto(
+            'Empanadas',
+            '/img/empa.jpg'
+        );
+
+
+    }
+});
