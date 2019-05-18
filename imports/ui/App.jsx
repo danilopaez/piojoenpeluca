@@ -1,11 +1,14 @@
 import React from 'react';
 import ListadoProductos from "./ListadoProductos";
+import ListarPedidos from "./ListarPedidos";
 
 
 const App = () => (
   <div>
-    <h1>Productos</h1>
+    <h6>More Hungry that...</h6>
+    <h1>Piojo en Peluca</h1>
     <ListadoProductos />  
+    <ListarPedidos />  
   </div>
 );
 
