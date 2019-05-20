@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import Pedidos from '../api/pedidos';
+import GroundPedidos from '../api/ground-pedidos';
 
 class ListarPedidos extends Component {
   render() {
@@ -27,6 +27,6 @@ class ListarPedidos extends Component {
 
 export default ListarPedidosContainer = withTracker(() => {
   return {
-    pedidos: Pedidos.find().fetch(),
+    pedidos: GroundPedidos.find().fetch(),
   };
 })(ListarPedidos);

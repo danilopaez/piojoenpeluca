@@ -1,5 +1,6 @@
 import Pedir from '/imports/methods/pedir';
 import HookPedir from '/imports/hooks/pedir';
+import resetPedidos from './methods/resetPedidos';
 
 import { Meteor } from 'meteor/meteor';
 import Productos from '/imports/api/productos';
