@@ -1,16 +1,11 @@
 body {
   
   font-family: sans-serif;
+  background: black;
+  color: white;
 }
 
-#PrimeraIMG{
-  background: url("/img/iphonex-TA.jpg");
-  width: 100vw;
-  height: 80vh;
-}
-
-#SegundaIMG{
-  background: url("/img/iphonex-X.jpg");
-  width: 100vw;
-  height: 80vh;
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Leckerli One', cursive;
+  color: #9a0d0d;
 }
