@@ -17,9 +17,11 @@ class ListarPedidos extends Component {
   }
 
   ItemPedido(pedido) {
+    
+    const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") ;
     return (
       <li key={pedido._id}>
-        <a target="_blank">{pedido.pedido} - {pedido.createdAt}</a>
+        <a target="_blank">{pedido.pedido} - { fechaPedido }</a>
       </li>
     );
   }
