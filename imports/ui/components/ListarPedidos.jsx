@@ -16,12 +16,34 @@ class ListarPedidos extends Component {
     );
   }
 
+  traerChar = prod => {
+    switch (prod) {
+      case 'Pizzas':
+        return '🍕';
+      case 'Lomos':
+        return '🥪';
+      case 'Empanadas':
+        return '🥟';
+      
+        
+    
+      default:
+        return prod;
+    } 
+  }
+
   ItemPedido(pedido) {
     
     const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") ;
+    let pedidoProds ='';
+    pedido.productos.map(
+      p=> {
+       pedidoProds  += p.cantidad +' '+ this.traerChar(p.prod) 
+      }
+    )
     return (
       <li key={pedido._id}>
-        <a target="_blank">{pedido.pedido} - { fechaPedido }</a>
+        📞 {pedido.tel} 🚚: {pedidoProds}
       </li>
     );
   }

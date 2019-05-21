@@ -32,15 +32,7 @@ export default class ItemProducto extends Component {
     
     }
 
-    pedir = ev => {
-        ev.preventDefault();
-        Meteor.call('pedirMorfi', {pedido:1}, e=>{
-            if(e)
-                return console.log(e)
-            
-            console.log('Pedido Realizado')
-        })
-    }
+
 
 
     render() {

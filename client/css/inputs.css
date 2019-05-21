@@ -1,0 +1,26 @@
+input, input::placeholder {
+    color: #9a0d0d;
+    border-bottom-color: #9a0d0d !important;
+}
+
+i{
+    cursor: pointer;
+}
+
+.btn-pedir  {
+    background-color: #9a0d0d !important;
+    color: black !important;
+    width: 100%;
+}
+
+.btn-pedir:hover, .btn-pedir:active, .btn-pedir:visited, .btn-pedir:focus  {
+    background-color: #9a0d0d !important;
+    color: black !important;
+    width: 100%;
+    opacity: .8;
+}
+
+.none {
+    display: none;
+}
+
