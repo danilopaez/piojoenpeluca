@@ -1,15 +1,21 @@
 import React from 'react';
-import ListadoProductos from "./ListadoProductos";
-import ListarPedidos from "./ListarPedidos";
+import ListadoProductos from "./components/ListadoProductos";
+import ListarPedidos from "./components/ListarPedidos";
+import ListarPedido from "./components/ListarPedido";
 
 
 const App = () => (
-  <div>
+  <React.Fragment>
+    
+
     <h6>More Hungry that...</h6>
     <h1>Piojo en Peluca</h1>
     <ListadoProductos />  
+    <ListarPedido />  
     <ListarPedidos />  
-  </div>
+
+    </React.Fragment>
+
 );
 
 export default App;

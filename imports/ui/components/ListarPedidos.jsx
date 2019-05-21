@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
-import GroundPedidos from '../api/ground-pedidos';
+import GroundPedidos from '../../api/ground-pedidos';
 
 class ListarPedidos extends Component {
   render() {

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import ItemProducto from './ItemProducto';
 import { withTracker } from 'meteor/react-meteor-data';
-import GroundProductos from '../api/ground-productos';
+import GroundProductos from '../../api/ground-productos';
 
 foo = new Ground.Collection('test');
 
