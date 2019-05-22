@@ -17,6 +17,7 @@ self.addEventListener('activate', (event) => {
 
 self.addEventListener('fetch', (event) => {
     const requestToFetch = event.request.clone();
+
     event.respondWith(
         caches.match(event.request.clone()).then((cached) => {
             // We don't return cached HTML (except if fetch failed)
