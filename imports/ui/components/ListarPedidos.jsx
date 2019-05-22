@@ -4,14 +4,32 @@ import GroundPedidos from '../../api/ground-pedidos';
 
 class ListarPedidos extends Component {
   render() {
+
+    if(this.props.pedidos.length < 1)
+      return(<div></div>);
+
     const pedidos = this.props.pedidos.map(
       pedido => this.ItemPedido(pedido)
     );
 
+    
+
     return (
-      <div>
+      <div className="container">
         <h2>Pedidos!</h2>
-        <ul>{ pedidos }</ul>
+        <table>
+          <thead>
+            <tr>
+              <th>Estado</th>
+              <th>Telefono</th>
+              <th>Pedido</th>
+              <th>Hora</th>
+            </tr>
+          </thead>
+          <tbody>
+            { pedidos }
+          </tbody>
+        </table>
       </div>
     );
   }
@@ -45,15 +63,18 @@ class ListarPedidos extends Component {
     
     const icon = pedido.enServer ? 'done_all' :'access_time' ;
     return (
-      <li key={pedido._id}>
-        <i className="material-icons">{icon}</i> 📞 {pedido.tel} 🚚: {pedidoProds}
-      </li>
+      <tr key={pedido._id}>
+        <td><i className="material-icons">{icon}</i></td>
+        <td>📞 {pedido.tel} </td>
+        <td>{pedidoProds}</td>
+        <td>{fechaPedido}</td>
+      </tr>
     );
   }
 }
 
 export default ListarPedidosContainer = withTracker(() => {
   return {
-    pedidos: GroundPedidos.find().fetch(),
+    pedidos: GroundPedidos.find({},{ sort: {createdAt:-1}}).fetch(),
   };
 })(ListarPedidos);

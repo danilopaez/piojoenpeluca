@@ -1,6 +1,8 @@
-input, input::placeholder {
+input, input::placeholder, input[type=number]:focus {
     color: #9a0d0d;
     border-bottom-color: #9a0d0d !important;
+    font-size: 1.5rem;
+    text-align: center;
 }
 
 i{
@@ -22,5 +24,18 @@ i{
 
 .none {
     display: none !important;
+}
+
+.mi-pedido a{
+    color: #9a0d0d;
+    font-weight: bold;
+    margin-left: 3rem;
+
+}
+
+.mi-pedido span{
+    font-size: 3rem;
+    text-align: center;
+    display: block;
 }
 

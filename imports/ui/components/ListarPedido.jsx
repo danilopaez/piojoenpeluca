@@ -2,7 +2,12 @@ import React, { Component } from 'react';
 import { withTracker } from 'meteor/react-meteor-data';
 import GroundPedido from '../../api/ground-pedido';
 
+
 class ListarPedido extends Component {
+  
+  vaciarPedido = () => {
+    GroundPedido.remove({});
+  }
   
 
   pedir = ev => {
@@ -15,11 +20,15 @@ class ListarPedido extends Component {
 
     }
 
+  
+
     Meteor.call('pedirMorfi', pedido, e => {
       if (e)
         return console.log(e)
 
-      console.log('Pedido Realizado')
+      this.vaciarPedido();
+      
+      
     })
   }
 
@@ -31,27 +40,46 @@ class ListarPedido extends Component {
     
   }
 
+  editarTelefono = ev =>{
+    Session.set('showBtnPedir', false);
+  }
+
   render() {
+    if(GroundPedido.find().count() < 1)
+      return null;
+
     const pedido = this.props.pedido.map(
       pedido => this.ItemPedido(pedido)
     );
 
     return (
-      <div>
+      <div className="container mi-pedido">
+        
         <h2>Mi Pedido!</h2>
         <ul>{ pedido }</ul>
-        <input 
-          type="number" name="tel" id="tel" placeholder="Ingresa tu Telefono"
-          onChange={ this.guardarTelefono }
-          disabled={ this.props.showBtnPedir ? true : false }
-        />
+        
         { this.props.showBtnPedir ? 
+        <React.Fragment>
+        
+        <span>
+              <i 
+                className="material-icons"
+                onClick={ this.editarTelefono }
+              >edit</i>
+              { Session.get('tel') }
+          </span>
         <button 
           className="btn waves-effect waves-light btn-pedir"
           onClick={ this.pedir }
         >Hacé Comer Chinverguencha!
         </button>
-        :false}
+        </React.Fragment>
+          : 
+          < input 
+          type ="number" name="tel" id="tel" placeholder="Ingresa tu Telefono"
+          onChange={this.guardarTelefono}
+         />
+        }
       </div>
     );
   }

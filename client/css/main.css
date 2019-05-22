@@ -1,11 +1,17 @@
 body {
   
   font-family: sans-serif;
+  font-size: 2rem;
   background: black;
-  color: white;
+  color: #9a0d0d;
 }
 
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Leckerli One', cursive;
   color: #9a0d0d;
+}
+
+.card-title{
+  font-size: 4rem !important;
+  text-shadow: 3px 2px 0 #7A7A7A;
 }
