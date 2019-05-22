@@ -3,7 +3,7 @@ import { withTracker } from 'meteor/react-meteor-data';
 import GroundPedido from '../../api/ground-pedido';
 
 class ListarPedido extends Component {
-
+  
 
   pedir = ev => {
     ev.preventDefault();
@@ -26,7 +26,7 @@ class ListarPedido extends Component {
   guardarTelefono = ev =>{
     if(ev.target.value.length == 10){
       Session.set('tel', ev.target.value);
-      console.log(Session.get('tel'));
+      Session.set('showBtnPedir', true);
     }
     
   }
@@ -41,13 +41,17 @@ class ListarPedido extends Component {
         <h2>Mi Pedido!</h2>
         <ul>{ pedido }</ul>
         <input 
-        type="text" name="tel" id="tel" placeholder="Ingresa tu Telefono"
+          type="number" name="tel" id="tel" placeholder="Ingresa tu Telefono"
           onChange={ this.guardarTelefono }
+          disabled={ this.props.showBtnPedir ? true : false }
         />
+        { this.props.showBtnPedir ? 
         <button 
           className="btn waves-effect waves-light btn-pedir"
           onClick={ this.pedir }
-        >Enviamelo Chinverguencha!</button>
+        >Hacé Comer Chinverguencha!
+        </button>
+        :false}
       </div>
     );
   }
@@ -68,5 +72,6 @@ class ListarPedido extends Component {
 export default ListarPedidoContainer = withTracker(() => {
   return {
     pedido: GroundPedido.find().fetch(),
+    showBtnPedir: Session.get('showBtnPedir') || false,
   };
 })(ListarPedido);

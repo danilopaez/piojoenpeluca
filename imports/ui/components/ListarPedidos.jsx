@@ -35,15 +35,18 @@ class ListarPedidos extends Component {
   ItemPedido(pedido) {
     
     const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") ;
-    let pedidoProds ='';
+    let pedidoProds =' ';
     pedido.productos.map(
       p=> {
-       pedidoProds  += p.cantidad +' '+ this.traerChar(p.prod) 
+        
+        pedidoProds += p.cantidad + this.traerChar(p.prod) + ' ' 
       }
     )
+    
+    const icon = pedido.enServer ? 'done_all' :'access_time' ;
     return (
       <li key={pedido._id}>
-        📞 {pedido.tel} 🚚: {pedidoProds}
+        <i className="material-icons">{icon}</i> 📞 {pedido.tel} 🚚: {pedidoProds}
       </li>
     );
   }
