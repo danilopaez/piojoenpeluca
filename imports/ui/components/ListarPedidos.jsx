@@ -52,7 +52,7 @@ class ListarPedidos extends Component {
 
   ItemPedido(pedido) {
     
-    const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") ;
+    const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") || '' ;
     let pedidoProds =' ';
     pedido.productos.map(
       p=> {
