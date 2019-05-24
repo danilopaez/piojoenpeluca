@@ -24,3 +24,9 @@ h1, h2, h3, h4, h5, h6 {
 #logo{
   vertical-align: middle;
 }
+#toast-container {
+  top: 10% !important;
+  right: 10% !important;
+  bottom: auto !important;
+  left:auto !important;  
+}
