@@ -6,7 +6,7 @@ import GroundPedido from '../../api/ground-pedido';
 class ListarPedido extends Component {
   
   vaciarPedido = () => {
-    GroundPedido.remove({});
+    GroundPedido.clear();
   }
   
 
@@ -17,23 +17,19 @@ class ListarPedido extends Component {
     const pedido = {
       tel,
       productos,
-
     }
-
-  
 
     Meteor.call('pedirMorfi', pedido, e => {
       if (e)
-        return M.toast({ html: 'Se prodrujo un error el intentar enviar el pedido' + e.reason })
-
-      M.toast({ html: 'Hemos enviado el pedido' })
+      return M.toast({ html: 'Se produjo un error el intentar enviar el pedido' + e.reason })
+      
+      M.toast({ html: 'Te estamos preparando el Pedido' })
       setTimeout(() => {
         M.toast({ html: 'Muchas Gracias Cara e Poio' })
       }, 1000);
-      this.vaciarPedido();
-      
-      
     })
+    M.toast({ html: 'Hemos enviado el pedido' })
+    this.vaciarPedido();
   }
 
   guardarTelefono = ev =>{
