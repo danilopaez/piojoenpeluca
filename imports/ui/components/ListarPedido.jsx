@@ -24,8 +24,12 @@ class ListarPedido extends Component {
 
     Meteor.call('pedirMorfi', pedido, e => {
       if (e)
-        return console.log(e)
+        return M.toast({ html: 'Se prodrujo un error el intentar enviar el pedido' + e.reason })
 
+      M.toast({ html: 'Hemos enviado el pedido' })
+      setTimeout(() => {
+        M.toast({ html: 'Muchas Gracias Cara e Poio' })
+      }, 1000);
       this.vaciarPedido();
       
       
@@ -53,7 +57,7 @@ class ListarPedido extends Component {
     );
 
     return (
-      <div className="container mi-pedido">
+      <div className="mi-pedido">
         
         <h2>Mi Pedido!</h2>
         <ul>{ pedido }</ul>

@@ -46,7 +46,7 @@ export default class ItemProducto extends Component {
                             <i className="material-icons" onClick={ ev => this.addOrRem(1, ev) }>add_circle_outline</i>
                             <i className="material-icons" onClick={ ev => this.addOrRem(-1, ev) }>remove_circle_outline</i>
                             <i className="material-icons" onClick={ ev => this.remProd( p.nombre)}>delete</i>
-                            { p.nombre }
+                            -  { p.nombre }
                             </span>
                         </div> 
                     </div>

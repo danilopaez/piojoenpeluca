@@ -26,6 +26,17 @@ i{
     display: none !important;
 }
 
+.mi-pedido {
+    position: fixed;
+    z-index: 9999999;
+    top: 10rem;
+    right: 1rem;
+    padding: 3rem;
+    background: black;
+    opacity: .9;
+    border-radius: 15px;
+}
+
 .mi-pedido a{
     color: #9a0d0d;
     font-weight: bold;

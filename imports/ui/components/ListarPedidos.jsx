@@ -52,8 +52,17 @@ class ListarPedidos extends Component {
 
   ItemPedido(pedido) {
     
-    const fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR") || '' ;
-    let pedidoProds =' ';
+    
+    let icon, fechaPedido, pedidoProds = ' ';
+    if( pedido.enServer ){
+      icon = 'done_all';
+      fechaPedido = new Date(pedido.createdAt).toLocaleTimeString("es-AR");
+    } else {
+      icon = 'access_time' ;
+      fechaPedido = ''
+    }
+    
+    
     pedido.productos.map(
       p=> {
         
@@ -61,7 +70,6 @@ class ListarPedidos extends Component {
       }
     )
     
-    const icon = pedido.enServer ? 'done_all' :'access_time' ;
     return (
       <tr key={pedido._id}>
         <td><i className="material-icons">{icon}</i></td>
