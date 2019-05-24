@@ -19,7 +19,7 @@ class ListarPedido extends Component {
       productos,
     }
     if ( !Meteor.status().connected )
-      M.toast({ html: 'Te enviaremos el pedido una vez que recuperemos Internet' })
+      M.toast({ html: 'Te enviaremos el pedido una vez que recuperemos Internet.Gracias' })
 
     Meteor.call('pedirMorfi', pedido, e => {
       if (e)
