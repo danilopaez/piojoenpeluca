@@ -9,7 +9,7 @@ const App = () => (
     
 
     <h6>More Hungry that...</h6>
-    <h1>Piojo en Peluca</h1>
+    <h1><img id="logo" src="/img/logo.png" />Piojo en Peluca</h1>
     <ListadoProductos />  
     <ListarPedido />  
     <ListarPedidos />  
