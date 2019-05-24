@@ -18,7 +18,7 @@ class ListarPedido extends Component {
       tel,
       productos,
     }
-    if (!navigator.onLine )
+    if ( !navigator.onLine )
       M.toast({ html: 'Te enviaremos el pedido una vez que recuperemos Internet.Gracias' })
 
     Meteor.call('pedirMorfi', pedido, e => {
