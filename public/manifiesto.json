@@ -2,7 +2,7 @@
     "short_name": "PiojoEnPeluca",
     "name": "Piojo en Peluca",
     "display": "fullscreen",
-    "background_color": "#fff",
+    "background_color": "#000",
     "orientation": "portrait-primary",
     "description": "Para los que tengan mas Hambre que Piojo en Peluca y no puedan esperar a tener Internet.",
     "icons": [
