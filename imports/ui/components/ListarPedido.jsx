@@ -18,6 +18,8 @@ class ListarPedido extends Component {
       tel,
       productos,
     }
+    if ( !Meteor.status().connected )
+      M.toast({ html: 'Te enviaremos el pedido una vez que recuperemos Internet' })
 
     Meteor.call('pedirMorfi', pedido, e => {
       if (e)
@@ -28,7 +30,6 @@ class ListarPedido extends Component {
         M.toast({ html: 'Muchas Gracias Cara e Poio' })
       }, 1000);
     })
-    M.toast({ html: 'Hemos enviado el pedido' })
     this.vaciarPedido();
   }
 
