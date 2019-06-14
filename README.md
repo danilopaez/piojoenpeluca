@@ -1,7 +1,7 @@
 # piojoenpeluca
 PWA Proof of Concept. Demo: Delivery App
 
-#Install
+# Install
 meteor npm install
-#run
+# Run
 meteor
